@@ -1,6 +1,6 @@
 {
   "name": "autofill-with-resume",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package to extract resume details from PDF using Gemini API.",
   "main": "index.js",
   "scripts": {
