@@ -18,7 +18,7 @@ npm i autofill-with-resume
 ```javascript
 const AutofillWithResume = require('autofill-with-resume');
 
-const processor = new AutofillWithResume('AIzaSyBBE3XC7t5HAuKD-9Ny4aa1TTTfQCvjsgA', './SOWBARNIKA.pdf');
+const processor = new AutofillWithResume('your_gemini_api', './SOWBARNIKA.pdf');
 
 processor.extractResumeDetails()
   .then(details => {
@@ -43,7 +43,7 @@ const path = require('path');
 const app = express();
 const upload = multer({ dest: 'uploads/' });
 
-const API_KEY = 'AIzaSyBBE3XC7t5HAuKD-9Ny4aa1TTTfQCvjsgA';
+const API_KEY = 'your_gemini_api';
 
 app.post('/upload', upload.single('resume'), (req, res) => {
   const filePath = req.file.path;
