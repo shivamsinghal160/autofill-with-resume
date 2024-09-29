@@ -143,9 +143,6 @@ class AutofillWithResume {
       const response = await result.response;
       const generatedText = await response.text();
 
-      // Log the entire result for debugging purposes
-      console.log("API response:", generatedText);
-
       if (!generatedText) {
         throw new Error("Empty response from API.");
       }
