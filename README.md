@@ -18,7 +18,7 @@ npm i autofill-with-resume
 ```javascript
 const AutofillWithResume = require('autofill-with-resume');
 
-const processor = new AutofillWithResume('your_gemini_api', './SOWBARNIKA.pdf');
+const processor = new AutofillWithResume('your_gemini_api', './Resume_name.pdf');
 
 processor.extractResumeDetails()
   .then(details => {
