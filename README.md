@@ -23,7 +23,7 @@ Here is a basic example demonstrating how to use `autofill-with-resume` to extra
 ```javascript
 const AutofillWithResume = require('autofill-with-resume');
 
-const processor = new AutofillWithResume('YOUR_GEMINI_API_KEY', './Resume.pdf');
+const processor = new AutofillWithResume('YOUR_GEMINI_API_KEY', './Resume_name.pdf');
 
 processor.extractResumeDetails()
   .then(details => {
