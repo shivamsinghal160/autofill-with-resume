@@ -11,12 +11,10 @@ class AutofillWithResume {
 
   async extractResumeDetails() {
     try {
-      // Read the PDF file
       const dataBuffer = fs.readFileSync(this.filePath);
       const pdfData = await pdfParse(dataBuffer);
       const extractedText = pdfData.text.trim();
 
-      // Create the AI prompt
       const prompt = `
       Extract the following details from the provided paragraph: name, website, email, phone number, LinkedIn, GitHub, Twitter (X), Facebook, education, skills, experience, projects, certifications, and achievements.
       Please return **only** a valid JSON object without any extra text or comments.
@@ -147,16 +145,14 @@ class AutofillWithResume {
         throw new Error("Empty response from API.");
       }
 
-      // Clean the response and parse JSON
       const cleanText = generatedText
-      .replace(/```json/g, "")  // Remove starting backtick block with json tag
-      .replace(/```/g, "")       // Remove ending backtick block
-      .replace(/\\n/g, "")       // Remove new line characters if they exist
-      .replace(/\\/g, "")        // Remove any backslashes that may have escaped characters
-      .replace(/^JSON/, "")      // Remove the word "JSON" at the beginning
+      .replace(/```json/g, "") 
+      .replace(/```/g, "")   
+      .replace(/\\n/g, "")     
+      .replace(/\\/g, "")     
+      .replace(/^JSON/, "")    
       .trim();    
 
-      // Ensure the JSON is complete
       if (!cleanText.endsWith("}")) {
         throw new Error("Incomplete JSON response.");
       }
