@@ -13,7 +13,7 @@ class AutofillWithResume {
     try {
       const dataBuffer = fs.readFileSync(this.filePath);
       const pdfData = await pdfParse(dataBuffer);
-const extractedText = pdfData.text.trim().replace(/"/g, '\\"');
+      const extractedText = pdfData.text.trim().replace(/"/g, '\\"');
 
       const prompt = `
       Extract the following details from the provided paragraph: name, website, email, phone number, LinkedIn, GitHub, Twitter (X), Facebook, education, skills, experience, projects, certifications, and achievements.
